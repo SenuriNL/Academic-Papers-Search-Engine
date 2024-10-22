@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Paper Search Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+
+<body>
+    <!-- {% if no_results %}
+    <h1 class="no-results">No results found for "{{ query }}"<h1>
+            {% elif papers %}
+            <h1>{{ num_results }} Search Results for "{{ query }}"</h1>
+            <ul>
+                {% for paper in papers %}
+                <li>
+                    <strong>arXiv ID:</strong> {{ paper['arXiv ID'] }}<br>
+                    <strong>Title:</strong> {{ paper['Title'] }}<br>
+                    <strong>Authors:</strong> {{ paper['Authors'] }}<br>
+                    <strong>Subjects:</strong> {{ paper['Subjects'] }}<br>
+                    <strong>Subject Tags:</strong> {{ paper['Subject_Tags'] }}<br>
+                    <strong>Submitted Date:</strong> {{ paper['Submitted Date'] }}<br>
+                    <strong>Abstract:</strong> {{ paper['Abstract'] }}<br>
+                    <strong>PDF Link:</strong> <a href="{{ paper['PDF Link'] }}" target="_blank">{{ paper['PDF Link']
+                        }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+
+            <div class="body-div">
+                <div class="result-container">
+                    {% if no_results %}
+                    <h1 class="no-results">No results found for "<span>{{ query }}</span>"<h1>
+                    {% elif papers %}
+                    <h1 class="found-result"><span>{{ num_results }}</span> Search Results for "<span>{{ query }}</span>"</h1>
+                    <div class="card-div">
+                            {% for paper in papers %}
+                                <div class="card">
+                                    <div class="card-top-details">
+                                        <div class="card-title"><span class="index-no">{{ loop.index }}.</span> {{ paper['Title'] }}</div>
+                                        <div class="card-id"><strong>arXiv ID:</strong> {{ paper['arXiv ID'] }}</div>
+                                    </div>
+                                    <div class="card-bottom-details">
+                                        <div class="card-detail"><strong>Authors:</strong> {{ paper['Authors'] }}</div>
+                                        <div class="card-detail"><strong>Subjects:</strong> {{ paper['Subjects'] }}</div>
+                                        <div class="card-detail"><strong>Subject Tags:</strong> {{ paper['Subject_Tags'] }}</div>
+                                        <div class="card-detail"><strong>Submitted Date:</strong> {{ paper['Submitted Date'] }}</div>
+                                        <div class="card-detail"><strong>Abstract:</strong> {{ paper['Abstract'] }}</div>
+                                        <div class="card-detail"><strong>PDF Link:</strong> <a href="{{ paper['PDF Link'] }}" target="_blank">{{ paper['PDF Link'] }}</a></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        
+</body>
+
+</html>

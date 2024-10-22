@@ -1,0 +1,99 @@
+/* Global Styles */
+body {
+    font-family: 'Raleway', 'Lato', sans-serif;
+    margin: 0 auto;
+    background-color: #f7cac9; /* Background color */
+}
+.no-results {
+    text-align: center;
+    margin-top: 300px;
+    color: #800000; /* Header text color */
+}
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #008080; /* Header text color */
+}
+
+/* Search Container Styles */
+.search__container {
+    padding-top: 64px;
+}
+
+.search__title {
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    color: #800000; /* Search title color */
+}
+
+.search__input::placeholder{
+    color: color(#575756 a(0.8));
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.search__input {
+    width: 50%;
+    padding: 12px 24px;
+    font-size: 19px;
+    line-height: 18px;
+    transition: all 250ms ease-in-out ;
+    margin: 20px auto;
+    border-radius: 50px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    background-repeat: no-repeat;
+    border: 1px solid #575756;
+    background-color: transparent;
+}
+.search__input:hover,.search__input:focus{
+        padding: 12px 0;
+        outline: 0;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #575756;
+        border-radius: 0;
+        background-position: 100% center;
+}
+/* Form Styles */
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    color: #800000; /* Label text color */
+}
+.options__container {
+    display: flex;
+    justify-content: center;
+}
+
+.algorithm__container,
+.filter__container {
+    width: 11%; 
+}
+
+select {
+    padding: 5px;
+    font-size: 17px;
+    background-color:white; 
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.search__button {
+    background-color: #f7cac9; /* Search button background color */
+    color: black; /* Search button text color */
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+p {
+    color: #800000; /* Error message text color */
+}
